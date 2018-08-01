@@ -1,0 +1,156 @@
+@import "./variable.styl"
+$translate(x,y)
+  -webkit-transform: translate(x,y)
+  -moz-transform: translate(x,y)
+  -ms-transform: translate(x,y)
+  -o-transform: translate(x,y)
+  transform: translate(x,y)
+
+$bg-size()
+  -moz-background-size : arguments
+  -webkit-background-size: arguments
+  background-size: arguments
+$box-sizing(n)
+  -webkit-box-sizing: n
+  -moz-box-sizing: n
+  box-sizing: n
+$screen-1080-img-width()
+  @media only screen and (max-width: 1080px)
+    width 40%
+  @media only screen and (max-width: 768px)
+    width 70%
+$screen-1080-img-width-small()
+  @media only screen and (max-width: 1080px)
+    width 20%
+  @media only screen and (max-width: 768px)
+    width 35%
+$screen-div-width()
+  @media only screen and (max-width: 1365px) and (min-width: 1081px)
+    width 90%
+
+
+$bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+$bg-img($url)
+  background-image  url($url)
+  background-repeat no-repeat
+$screen-1080-bg($url_big,$url_small)
+  background-image: url($url_big)
+  background-repeat no-repeat
+  @media only screen and (max-width: 1080px)
+    background-image: url($url_small)
+$screen-bg($url)
+  background-image: url($url)
+  background-repeat no-repeat
+  background-position center
+  -moz-background-size : cover
+  -webkit-background-size: cover
+  background-size: cover
+//$clear():after
+//  display block
+//  clear both
+//  content ""
+//  visibility hidden
+//  height 0
+$transition()
+  -webkit-transition: arguments
+  -moz-transition: arguments
+  -ms-transition: arguments
+  -o-transition: arguments
+  transition: arguments
+
+ headHeight = 80px
+ $color-b = rgba(0,0,0,0.5)
+
+$screen-1080-margin-top()
+  @media only screen and (max-width: 1080px)
+    margin-top  70px
+  @media only screen and (max-width: 768px)
+    margin-top  70px
+  @media only screen and (max-height: 880px and max-width 1365px)
+    margin-top  70px
+$screen-1080-top()
+  @media only screen and (max-width: 1080px)
+    top  70px
+  @media only screen and (max-width: 768px)
+    top  70px
+
+$transition-title(prop)
+  .{prop}-enter
+    opacity 0
+    $translate(0,-200px)
+  .{prop}-enter-active
+    $transition all 1s  cubic-bezier(1.0, 0.5, 0.8, 1.0)
+$table-box()
+  width 100%
+  height 100%
+  display table
+$table-cell()
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+$transition-slide()
+  .{prop}-enter
+    opacity 0
+    $translate(0,200px)
+  .{prop}-enter-active
+    $transition all 1s  cubic-bezier(1.0, 0.5, 0.8, 1.0)
+//$screen-height()
+//  @media only screen and (max-height: 700px)
+//    overflow-y scroll
+$transition-X(prop,x,y,t)
+  .{prop}-enter
+    opacity 0
+    $translate(x,y)
+  .{prop}-enter-active
+    $transition all t  cubic-bezier(1.0, 0.5, 0.8, 1.0)
+$page-title()
+  width 100%
+  margin 0 auto
+  padding 150px 0 15px 0
+  box-sizing content-box
+  text-align center
+  @media only screen and (max-width: 1080px)
+    padding 100px 0 15px 0
+  @media only screen and (max-height: 780px)
+    padding 100px 0 15px 0
+  @media only screen and (max-width: 768px)
+    padding 60px 0 15px 0
+$screen-titleSize()
+  font-size 56px
+  @media only screen and (max-width: 1080px)
+    font-size 36px
+  @media only screen and (max-width: 768px)
+    font-size 24px
+$main-center(x,y)
+  position absolute
+  top $mainTop-x
+  left 0
+  right 0
+  bottom x
+  @media only screen and (max-height: 780px)
+    top 171px
+  @media only screen and (max-width: 1080px)
+    top $mainTop-m
+  @media only screen and (max-width: 768px)
+    top $mainTop-s
+    bottom y
+
+$main-center-s()
+  position absolute
+  top 50%
+  left 50%
+  $translate(-50%,-50%)
+
+
+
+
